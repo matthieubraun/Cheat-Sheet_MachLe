@@ -1,0 +1,25 @@
+\subsection*{Linear Regression}
+The goal is to find the best mapping function : $\hat{y}=h_\theta(\overrightarrow{x})$, with $h_\theta(\overrightarrow{x})=\sum_{i=0}^{N}\theta_ix_i=\overrightarrow{\theta}^T\overrightarrow{x}$
+
+\textbf{Cost function (MSE):}
+
+$J(\theta)=\frac{1}{2N}\sum_{i=1}^{N}(h_\theta(\overrightarrow{x_i})-y_i)^2$
+
+\textbf{Closed form solution:} usually too expensive to compute :
+
+$\overrightarrow{\theta}=(X^TX)^{-1}X^T\overrightarrow{y}$
+
+\textbf{Gradient descent:} minimize the cost function
+
+\underline{Classic:} $\theta_i:=\theta_i-\alpha\frac{1}{N}\sum_{i=1}^{N}(h_\theta(\overrightarrow{x_i})-y_i)x_i$.
+The learning rate $\alpha$ must be small enough to converge and large enough to converge in a reasonable time.
+
+\underline{Stochastic gradient descent:} wich is faster but more noisy : $\theta_i:=\theta_i-\alpha(h_\theta(\overrightarrow{x_i})-y_i)x_i$.
+
+\underline{Batched gradient descent} wich is faster but the batched size $b$ must
+be optimized.
+
+\underline{Stop condition:} $\frac{J(\theta)^{epoch_{n-1}}-J(\theta)^{epoch_{n}}}{J(\theta)^{epoch_{n}}}<\varepsilon$
+
+If a dependency of $y$ with respect to $x$ is suspected to be non-linear :
+$h_\theta(\overrightarrow{x})=\theta_0+\theta_1x_1+\theta_2x_1^2$

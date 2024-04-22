@@ -1,0 +1,24 @@
+\subsection*{Reinforcement Learning}
+Learns from interaction with an environment, optimizing a reward function.
+RL problems can be modeled as Markov Decision Processes (MDPs), which consist of a set
+of states, a set of actions, a transition function, and a reward function. The goal
+of RL is to find a policy that maps states to actions, and maximizes the expected return,
+which is the discounted sum of future rewards.
+
+\textbf{Value functions:} estimate the expected return from a given state or
+state-action pair. Value functions can be learned by dynamic programming,
+\textit{Monte Carlo} or \textit{temporal-difference learning}.
+
+\textbf{Value-based methods (SARSA):} learn a value function and derive a policy from it.
+
+\textbf{Policy-based methods:} methods that learn a policy directly, without using a value function.
+
+\textbf{Exploration-exploitation trade-off:} the dilemma of choosing between actions
+that have high expected reward (exploitation) and actions that have high
+uncertainty (exploration).
+
+\underline{$\varepsilon$-greedy:} with probability $\varepsilon$, choose a random action, otherwise choose the best action.
+
+\underline{Boltzmann:} $P(a|s)=\frac{e^{\frac{Q(s, a)}{\tau}}}{\sum_{b\in a}e^{\frac{Q(s, b)}{\tau}}}$
+Explore based on the probability of each action.
+

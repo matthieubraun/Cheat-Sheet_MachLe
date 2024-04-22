@@ -1,0 +1,76 @@
+\subsection*{General ML methods}
+\noindent
+\textbf{Setting Hyperparameters:}
+
+\underline{Idea 1:} Split the training set into a training set and a test set.
+
+\underline{Idea 2:} Split the training set into a training set, a validation set and a test set.
+
+\underline{Idea 3:} Split datas into folds try each folds as validation set and average the results.
+
+\underline{Curse of dimensionality:} is when we observe a decrease of
+performance when increasing the number of features. This is due to the
+lack of samples N with respect to the dimensions D of the input space.
+
+\textbf{Model evaluation:}
+
+\underline{accuracy} $= \frac{TP + TN}{TP + TN + FP + FN}$.
+
+\underline{precision} $= \frac{TP}{TP + FP}$.
+
+\underline{recall} $= \frac{TP}{TP + FN}$.
+
+\underline{F1 score} $= 2\cdot\frac{\text{precision}\cdot \text{recall}}{\text{precision} + \text{recall}}$
+
+\textbf{Normalization:}
+
+\underline{min-max rescaling} $= \frac{x - x_{min}}{x_{max} - x_{min}}$.
+For strong outliners.
+
+\underline{min-max normalization} $= 2\cdot \frac{x - x_{min}}{x_{max} - x_{min}}-1$.
+For strong outliners.
+
+\underline{z-norm} $= \frac{x - \mu}{\sigma}$.
+For normal outliners.
+
+\underline{log scaling} $= log(x)$.
+For tail distribution.
+
+\textbf{Encoding:}
+
+\underline{1-hot:} association of 1 input for 1 category (ex 1 for cat, 0 for dog).
+
+\underline{ordinal:} association of 1 input for 1 category (ex 1 for cat, 2 for dog).
+
+\underline{word embedding:} projection of a word into a vector space.
+
+\textbf{Learning curves:} plot of the training and validation error $J(\theta)$ as a
+function of the number of training examples.
+
+\underline{High bias:} underfitting, the model is too simple, getting more data won't help.
+On the learning curve, the training and validation error are close and high.
+
+\underline{High variance:} overfitting, the model is too complex, getting more data will help.
+On the learning curve, the training error is low and the validation error is high.
+
+\textbf{Dimensionality reduction:} transforms high-dimensional
+data into a low-dimensional space, retaining meaningful properties of the original data.
+
+\underline{Feature selection:} select only a few features are relevant to the task.
+
+\underline{PCA:} uses orthogonal transformation to convert correlated variables into uncorrelated
+"principal components". The first component maximizes variance, with each subsequent component
+orthogonal to the previous, maximizing remaining variance.
+Given a dataset $X$, create an $N\times d$ matrix, subtract the mean of each
+vector $x_n$ in $X$, compute the covariance matrix, compute the eigenvectors and eigenvalues of
+$\Sigma$, the $M$ eigenvectors with the highest eigenvalues are the principal components.
+
+\underline{t-SNE:} t-distributed stochastic neighbor embedding, tries to group
+local data points closer to each other. It uses a parameter called perplexity to
+guess the number of close neighbors : $Perp(P_i)=2^{-\sum_{j}p_{j|i}\log_2p_{j|i}}$.
+Tipically, perplexity is between 5 and 50. It is a non-linear dimensionality reduction.
+It tipically uses PCA to reduce the dimensionality to 50 before applying t-SNE.
+
+\underline{UMAP:} Uniform Manifold Approximation and Projection, faster than t-SNE,
+allows to work with high dimensional data directly, uses the number of neighbors
+instead of perplexity.

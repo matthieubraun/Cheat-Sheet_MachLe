@@ -1,0 +1,15 @@
+\subsection*{Logistic Regression}
+The logistic regression is an extension of the linear regression : $h_\theta(\overrightarrow{x})=g(\overrightarrow{\theta}^T\overrightarrow{x})$.
+It is actually a one layer NN.
+
+\textbf{Hypothesis function:} output 1 for a positive class and 0 for a negative class.
+
+\underline{Sigmoid function:} $g(z)=\frac{1}{1+e^{-z}}$ and it's derivative : $g'(z)=g(z)(1-g(z))$.
+
+\underline{Objective function:}
+
+$J(\theta)=\frac{1}{N}\sum_{i=1}^{N}[y_i\log(h_\theta(\overrightarrow{x_i}))+(1-y_i)\log(1-h_\theta(\overrightarrow{x_i}))]$
+
+\underline{Gradient:}
+
+$\theta_i := \theta_i + \alpha\frac{1}{N}\sum_{i=1}^{N}(y_i-h_\theta(\overrightarrow{x_i}))x_i$.

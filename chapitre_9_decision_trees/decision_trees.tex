@@ -1,0 +1,38 @@
+\subsection*{Decision Trees}
+Implements a sequence of decisions
+on individual features allowing to classify the input data
+at the end of the sequence. The decisions are taken
+comparing a selected feature against a reference value.
+The decisions are organised in a binary tree where each
+decision split the input space into two branches.
+
+\textbf{Gini impurity:}
+
+\underline{Of a set:}
+
+$G_{set} = 1 - \sum_{i=1}^{K} P(C_k)^2$ where
+$P(C_k)=\sfrac{N_k}{N}$ measure how ofen a randomly chosen element
+from the set would be incorrectly labeled if it was randomly labeled.
+$N_k$ is the number of elements of class $k$ in the set.
+
+\underline{Of a split:}
+
+$G_{split} = \frac{N_{left}}{N}G_{left} + \frac{N_{right}}{N}G_{right}$.
+is the weighted sum of the Gini impurity of the two sets after the split.
+The weights are the proportions in the set.
+
+\underline{Gain:} $G_{gain} = G_{set} - G_{split}$.
+
+\textbf{Overfitting:}
+
+\underline{Early stopping:} stop growing the tree after a certain depth.
+
+\underline{Pruning:} grow a full tree and trim it afterwards.
+
+\underline{Boosting:} build aditional trees on the weakneses of the previous ones.
+
+\underline{Random Forest:} build multiple trees on random subsets of the data and average
+their predictions.
+
+\textbf{XGBoost} : (go-to solution) is a boosting algorithm that uses gradient boosting
+to build the trees (implies the existence of a loss function).

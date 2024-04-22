@@ -1,0 +1,44 @@
+%LaTex cheat sheet template
+\documentclass[10pt,a4paper,landscape]{article}
+
+\usepackage{xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+
+\geometry{a4paper, left=0mm, top=0mm, right=0mm, bottom=1mm}
+
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\begin{multicols*}{4}
+    \section*{Formulaire MachLe}
+    \input{chapitre_1_fundamentals/fundamentals.tex}
+    \input{general_methods/general_methods.tex}
+    \input{chapitre_2_knn/knn.tex}
+    \input{chapitre_3_bayes/bayes.tex}
+    \input{chapitre_4_linear_regression/linear_regression.tex}
+    \input{chapitre_6_logistic_regression/logistic_regression.tex}
+    \input{chapitre_7_svm/svm.tex}
+    \input{chapitre_8_kmeans/kmeans.tex}
+    \input{chapitre_9_decision_trees/decision_trees.tex}
+    \input{chapitre_10_neural_networks/neural_networks.tex}
+    \input{chapitre_11_convolutional_neural_networks/convolutional_neural_networks.tex}
+    \input{chapitre_12_recurrent_neural_networks/recurrent_neural_networks.tex}
+    \input{chapitre_13_reinforcement_learning/reinforcement_learning.tex}
+\end{multicols*}
+\end{document}

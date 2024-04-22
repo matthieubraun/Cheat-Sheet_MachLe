@@ -1,0 +1,25 @@
+\subsection*{K-MEANS}
+K-Means is an unsupervised algorithm that finds clusters in the data. It is mathematically
+guaranteed to converge but can converge to a local minimum.
+
+\textbf{Terminology:}
+
+\underline{Centroids:} the center of the clusters.
+
+\underline{Codebook:} the set of centroids.
+
+\underline{Partition:} the set of samples assigned to a centroid.
+
+\textbf{Distortion function:}
+
+$J(c, \mu)=\sum_{i=1}^{N} = d(x_n, \mu_{C_n})^2$.
+
+$C_n$ is the centroid of the cluster to which $x_n$ is assigned.
+$\mu_{C_n}$ is the centroid of the cluster $C_n$. $d()$ is the distance function and can
+be the euclidean or manhattan distance.
+
+\textbf{Elbow method:}
+finds the optimal number of clusters. It plots the distortion
+function vs the number of clusters. The number of clusters after which the distortion function
+starts to decrease slowly is the optimal.
+

@@ -1,0 +1,22 @@
+\subsection*{K-NN}
+k-nearest neighbour algorithm is a
+method that classifies unlabelled examples based on
+their similarity with examples in the training set.
+It can be used for both classification and regression.
+
+\textbf{Distance metric:}
+
+\underline{L1 (Manhattan):} $d(I_1, I_2) = \sum_{i=1}^{n} |I_1^p - I_2^p|$
+
+\underline{L2 (Euclidean):} $d(I_1, I_2) = \sqrt{\sum_{i=1}^{n} (I_1^p - I_2^p)^2}$
+
+\textbf{Hyperparameters to tune:}
+
+\underline{Normalization:} type : non, min-max, z-score.
+
+\underline{distance metric:} L1, L2.
+
+\underline{k:} number of neighbours.
+
+K-NN is heavy to compute in terms of memory and CPU time. Memory : full training set needs to be stored.
+CPU : the distance is computed against all training examples.

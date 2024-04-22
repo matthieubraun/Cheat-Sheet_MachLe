@@ -1,0 +1,28 @@
+\subsection*{Convolutional Neural Networks}
+Convolutional Neural Networks (CNNs) process spatial data using
+convolutions, extracting diverse features from images with multiple
+filters. They detect hierarchical features by linking filter layers,
+and use new activation functions to mitigate vanishing gradients.
+CNNs summarize lower layer feature statistics via down-sampling and
+employ techniques like dropout to prevent overfitting.
+
+Each hidden neuron process a small region of the image. Different kernel sizes
+allows the identification of features at different scales. Zeros padding allows
+the output to have the same size as the input.
+
+Multiple convolutions look for different features. The output of a convolutional
+layer with 30 kernels gives 30 images.
+
+Sigmoid activation functions can cause vanishing gradients due to their derivatives
+nearing zero. Softmax in the output layer calculates a categorical
+probability distribution : $f(x_i)=\sfrac{e^{x_i}}{\sum_{j=1}^{K}e^{x_j}}$.
+
+Maxpooling after convolution reduces computation by down-sampling non-maximal
+values, summarizing lower layer feature statistics. It results in smaller images.
+
+The resulting architecture of a CNN is a stack of alternating convolutional and
+pooling layers, followed by a fully connected layer.
+
+Dropout in CNNs randomly deactivates neurons during training to prevent
+overfitting, enhancing model generalization by reducing complex
+co-dependencies on training data.

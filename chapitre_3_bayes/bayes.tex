@@ -1,0 +1,26 @@
+\subsection*{Bayes}
+$P(C_k|x) = \frac{P(x|C_k)P(C_k)}{P(x)}$
+
+\underline{posteriori probability:} probability of class j given observation x
+
+\underline{likelihood:} probability of observing x given class j
+
+\underline{priori probability:} probability of class j
+
+\underline{evidence:} probability of x unconditional to any class
+
+\textbf{Multiple ways to estimate $P(x|C_k)$:}
+
+\underline{Univariate Gaussian:}
+
+$P(x|C_k) = \frac{1}{\sqrt{2\pi\sigma_{C_k}^2}}e^{\frac{-(x-\mu_{C_k})^2}{2\sigma_{C_k}^2}}$
+
+\underline{Multivariate Gaussian (Naive Bayes):}
+
+$P(x|C_k) = \frac{\prod_{i=1}^{D}}{\sqrt{2\pi\sigma_{C_k}^2}}e^{\frac{-(x_i-\mu_{C_k})^2}{2\sigma_{C_k}^2}}$
+
+\underline{Univariate/multivariate Gaussian mixture:}
+$P(x|C_k) = \sum_{i=1}^{K}\omega_{C_k}^{(i)}\mathcal{N}(x|\mu_{C_k}^{(i)}, \sigma_{C_k}^{(i)})$
+
+with $\mu$ the mean, $\sigma$ the standard deviation, $\Sigma$ the covariance matrix,
+$\omega$ the weight of the Gaussian, $K$ the number of Gaussians.

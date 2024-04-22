@@ -1,0 +1,34 @@
+\subsection*{Neural Networks}
+A neural network is a set of neurons connected together. Each neuron is a function
+that takes a vector as input and outputs a scalar. The output of a neuron is
+computed as follows : $y = f(\sum_{i=1}^{N} w_i x_i + b)$ where $w_i$ are the weights,
+$x_i$ are the inputs, $b$ is the bias and $f$ is the activation function.
+
+\textbf{Forward propagation:}
+
+Instead of beeing constrained by its own features
+$\overrightarrow{x}$, the neural network gets to learn its own features
+to feed into the logistic regression.
+
+\textbf{Cost function:}
+
+$J(\Theta)=-\frac{1}{m}[\sum_{i=1}^{m}\sum_{k=1}^{K}y_k^{(i)}\log(h_\Theta(x^{(i)}))_k+(1-y_k^{(i)})\log(1-(h_\theta(x^{(i)}))_k)]+\frac{\lambda}{2m}\sum_{l=1}^{L-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(\Theta_{ji}^{(l)})^2$
+
+$^{(i)}$ is the layer number. $s_l$ is the number of units in layer $l$. $\lambda$ is the regularization parameter. $L$ is the total number of layers. $K$ is the number of output units.
+Neural network's cost function extends logistic regression's to handle multiple outputs.
+
+\textbf{Backpropagation:}
+
+The equivalent of gradient descent for neural networks.
+It is used to compute the partial derivatives $\frac{\partial}{\partial\Theta_{ij}^{(l)}}J(\Theta)$.
+There is also back propagation with momentum to avoid local minima.
+
+\textbf{Activation functions} :
+
+\underline{sigmoid} : $g(z)=\frac{1}{1+e^{-z}}$
+
+\underline{tanh} : $g(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}}$
+
+\underline{ReLU} : $g(z)=\max(0,z)$
+
+\underline{Linear} : $g(z)=z$

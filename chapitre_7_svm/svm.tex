@@ -1,0 +1,46 @@
+\subsection*{SVM}
+\textbf{Linear SVM:} tries to find the hyperplane that separates the 2
+classes and that maximizes the margin between the 2 classes.
+SVM are particularly efficient for tasks with a high number of features and a low number of samples.
+
+\underline{Hypothesis function:}
+
+$h_w(\overrightarrow{x})=\text{sign}(b+\overrightarrow{w}^T\overrightarrow{x})$.
+
+\underline{Margin:} distance between the hyperplane and the closest point of each class. Training samples
+on the margin boundaries are called support vectors.
+
+\underline{Hinge loss function:} used to calculate the slack :
+$\xi_i=H(d(x_i, w, b))$, $d()$ is the distance from the boundary. That means
+$\xi_i=0$ if $x_i$ is correctly classified and $\xi_i>0$ if $x_i$ is misclassified or
+in the margin.
+
+\underline{Loss function:} for two classes:
+
+$J(w)=C[\frac{1}{N}\sum_{i=1}^{N}y_iH_{C1}(d(x_i, w, b))+(1-y_i)H_{C0}(d(x_i, w, b))]+\sfrac{\left\|w\right\|^2}{2}$.
+The smaller the $C$, the greater the number of misclassified points.
+
+\textbf{Kernel functions for non-linear problems:}
+Compute a new test sample $x_t$ using a kernel funciton.
+
+\underline{Linear:} $K(x_i, x_j)=x_ix_j$
+
+\underline{Polynomial:} $K(x_i, x_j)=(x_ix_j+1)^d$
+
+\underline{RBF:} $K(x_i, x_j)=\exp(-\gamma\left\|x_i-x_j\right\|^2)$
+
+\underline{Hyperbolic tangent:}
+
+$K(x_i, x_j)=\tanh(\kappa x_ix_j+\delta)$
+
+\textbf{Multi-class classification:}
+
+\underline{One-vs-all:} the SVM with the highest output value assigns the class to a sample.
+
+\underline{One-vs-one:} each SVM assigns a sample to one of the two classes.
+The class with the highest number of votes is assigned to the sample.
+
+
+
+
+
